@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano Bissexto</title>
+    <style>
+        body{
+            background-color: rgb(172, 172, 172);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div{
+            width: 75%;
+            border-radius: 15px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="date" id="ano">
+        <input type="button" value="Verificar" onclick="bissexto()">
+    </div>
+    <script>
+        function bissexto() {
+            let data = document.getElementById("ano").value
+            let ano = new Date(data).getFullYear()
+            let teste1 = ano % 4 == 0
+            let teste2 = ano % 100 == 0
+            let teste3 = ano % 400 == 0
+
+            if ((teste1 == true && teste2 == true ** teste3 == true) || (teste1 == true && teste2 == false)) {
+                alert("Este ano é bissexto")
+            } else {
+                alert("Este ano não é bissexto")
+            }
+        }
+    </script>
+</body>
+</html>

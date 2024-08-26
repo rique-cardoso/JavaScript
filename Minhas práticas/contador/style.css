@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+body{
+    background-color: rgb(92, 157, 255);
+    font-size: 13pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+h1{
+    font-weight: none;
+    text-align: center;
+}
+
+section{
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: auto;
+    width: 600px;
+}
+
+#botao{
+    border: none;
+    outline: none;
+    background-color: rgb(92, 157, 255);
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+#botao:hover{
+    background-color: rgba(92, 157, 255, 0.459);
+}

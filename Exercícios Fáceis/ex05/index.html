@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de estoque</title>
+    <style>
+        body{
+            background-color: rgb(172, 172, 172);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div{
+            width: 75%;
+            border-radius: 15px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Quantidade atual: <input type="number" id="qtdAtual"></p>
+        <p>Quantidade mínima: <input type="number" id="qtdMinima">  Quantidade máxima: <input type="number" id="qtdMaxima" onblur="verificaEstoque()"></p>
+        <p id="resposta"></p>
+    </div>
+    <script>
+        function verificaEstoque() {
+            let qtdAtual = Number(document.getElementById("qtdAtual").value)
+            let qtdMinima = Number(document.getElementById("qtdMinima").value)
+            let qtdMaxima = Number(document.getElementById("qtdMaxima").value)
+            let qtdMedia = (qtdMinima + qtdMaxima) / 2
+            let resposta = document.getElementById("resposta")
+
+            if(qtdAtual >= qtdMedia){
+                resposta.innerHTML = `Não efetuar compra`
+            }else{
+                resposta.innerHTML = `comprar pelo menos ${qtdMedia - qtdAtual}`
+            }
+            
+        }
+    </script>
+</body>
+</html>

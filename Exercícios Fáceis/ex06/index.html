@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partida de futebol</title>
+    <style>
+        body{
+            background-color: rgb(172, 172, 172);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div{
+            width: 75%;
+            border-radius: 15px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Real Madrid: <input type="number" id="gols1" min="0"></p>
+        <p>Barcelona: <input type="number" id="gols2" min="0" onblur="resultado()"></p>
+    </div>
+    <script>
+        function resultado() {
+            let golsTimeA = Number(document.getElementById("gols1").value)
+            let golsTimeB = Number(document.getElementById("gols2").value)
+
+            if(golsTimeA > golsTimeB){
+                alert("Real Madrid é o vencedor")
+            }else if(golsTimeB > golsTimeA){
+                alert("Barcelona é o vencedor")
+            }else{
+                alert("Empate")
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificador de consoante / vogal</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100vh;
+        }
+        body{
+            background-image: linear-gradient(to bottom, rgb(67, 176, 226), rgb(133, 228, 70));
+        }
+        main{
+            width: 85%;
+            height: 60vh;
+
+            background-color: white;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            border-radius: 10px;
+        }
+        h1{
+            text-align: center;
+            margin: 50px;
+        }
+        div{
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        input[type="button"]{
+            padding: 8px;
+            background-color: rgb(30, 153, 235);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.425);
+            margin-left: 30px;
+        }
+        input[type="button"]:hover{
+            cursor: pointer;
+            background-color: rgb(101, 185, 241);
+            transition-duration: .5s;
+            transition-timing-function: ease;
+        }
+        p{
+            margin: 50px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Identificador de consoante / vogal</h1>
+        <div>
+            <input type="text" id="caractere" minlength="1" maxlength="1">
+            <input type="button" value="Identificar" id="btnIdentificar">
+        </div>
+        <p><span id="resultado"></span></p>
+    </main>
+    <script>
+        btnIdentificar.addEventListener('click', e => {
+            const caractere = [document.getElementById("caractere").value.toLowerCase()]
+            const btnIdentificar = document.querySelector("#btnIdentificar")
+            let resultado = document.querySelector("#resultado")
+            if(/[a-z]/.test(caractere)){
+                if("aeiou".includes(caractere)){
+                    resultado.innerHTML = "É uma vogal"
+                }else{
+                    resultado.innerHTML = "É uma consoante"
+                }
+            }else{
+                alert("Digite uma letra.")
+            }
+        })
+    </script>
+</body>
+</html>

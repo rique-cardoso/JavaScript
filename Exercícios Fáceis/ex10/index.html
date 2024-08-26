@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varejão</title>
+    <style>
+        body{
+            background-color: rgb(172, 172, 172);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div{
+            width: 75%;
+            border-radius: 15px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Maçã: <input type="number" id="maca"> Kg</p>
+        <p>Morango: <input type="number" id="morango"> Kg</p>
+        <input type="button" value="Total" onclick="total()">
+    </div>
+    <script>
+        function total() {
+            let qtdMaca = Number(document.getElementById("maca").value)
+            let qtdMorango = Number(document.getElementById("morango").value)
+            let qtdTotal = qtdMaca + qtdMorango
+            let precoMaca = 0
+            let precoMorango = 0
+            let precoTotal = 0
+
+            if(qtdMaca > 5){
+                precoMaca = 1.5 * qtdMaca
+            }else{
+                precoMaca = 1.8 * qtdMaca
+            }
+
+            if(qtdMorango > 5){
+                precoMorango = 2.2 * qtdMorango
+            }else{
+                precoMorango = 2.5 * qtdMorango
+            }
+
+            precoTotal = precoMorango + precoMaca
+            let precoTotal_formatado = precoTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+
+            alert(precoTotal_formatado)
+        }
+    </script>
+</body>
+</html>

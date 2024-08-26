@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(172, 172, 172);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        div{
+            width: 75%;
+            border-radius: 15px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Homem 1: <input type="number" id="idade1"></p>
+        <p>Homem 2: <input type="number" id="idade2"></p>
+        <p>Mulher 1: <input type="number" id="idade3"></p>
+        <p>Mulher 2: <input type="number" id="idade4" onblur="operacao()"></p>
+    </div>
+    <script>
+        function operacao() {
+            const idadeHomem1 = Number(document.getElementById("idade1").value)
+            const idadeHomem2 = Number(document.getElementById("idade2").value)
+            const idadeMulher1 = Number(document.getElementById("idade3").value)
+            const idadeMulher2 = Number(document.getElementById("idade4").value)
+
+            let homemVelho = idadeHomem1 > idadeHomem2 ? idadeHomem1 : idadeHomem2
+            let homemNovo = homemVelho == idadeHomem1 ? idadeHomem2 : idadeHomem1
+            let mulherVelha = idadeMulher1 > idadeMulher2 ? idadeMulher1 : idadeMulher2
+            let mulherNova = mulherVelha == idadeMulher1 ? idadeMulher2 : idadeMulher1
+        
+            alert(homemVelho + mulherNova)
+            alert(homemNovo * mulherNova)
+        }
+    </script>
+</body>
+</html>
