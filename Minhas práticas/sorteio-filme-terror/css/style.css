@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'HelpMe';
+    src: url(fonts/HelpMe.ttf) format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'BLOODY';
+    src: url(fonts/BLOODY.TTF) format('opentype');
+    font-weight: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+    background-image: url(imagens/img-back.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+h1{
+    font-family: 'HelpMe', sans-serif;
+    font-weight: normal;
+    color: rgb(231, 230, 230);
+    text-align: center;
+    margin-top: 20px;
+}
+
+img{
+    display: block;
+    margin: 20px auto;
+}
+
+input{
+    width: 150px;
+    height: 50px;
+    display: block;
+    margin: 20px auto;
+    outline: none;
+    background-color: white;
+    border: none;
+    border-radius: 7px;
+    font-family: 'HelpMe', sans-serif;
+    font-size: 1.5em;
+}
+
+input:hover{
+    box-shadow: 3px 3px 20px red;
+}
+
+p{
+    color: white;
+    font-family: 'BLOODY', sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 30px;
+    font-size: 1.5em;
+}
