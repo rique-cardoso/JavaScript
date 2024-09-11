@@ -6,13 +6,19 @@ function converterBases() {
     if(baseConvertida != baseConversora){
         switch (baseConvertida) {
             case "bin":
-                if(baseConvertida_valor.every(elem => elem <= 1 && elem >= 0)){
+                if(baseConvertida_valor.reverse().every(elem => elem <= 1 && elem >= 0)){
+                    let decimal_correspondente = baseConvertida_valor.map((elem, indice) => {
+                        return elem * (2 ** indice)
+                    })
                     switch (baseConversora) {
                         case "oct":
                             
                             break;
                         case "dec":
-                            
+                            let soma = decimal_correspondente.reduce((valorAnterior, valorAtual) => {
+                                return valorAnterior + valorAtual
+                            }, 0)
+                            resultado.innerHTML = soma
                             break;
                         default:
                             break;
