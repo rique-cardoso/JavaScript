@@ -14,23 +14,23 @@
             <select id="convertido">
                 <option value="bin">Base binária</option>
                 <option value="oct">Base octal</option>
-                <option value="dec">Base decimal</option>
+                <option selected value="dec">Base decimal</option>
                 <option value="hex">Base hexadecimal</option>
             </select>
             <label for="valorConvertido">Valor: </label>
-            <input type="number" id="valorConvertido" required min="1" value="2">
+            <input type="text" id="valorConvertido" required value="15">
         </div>
         <div>
             <label for="conversor">Para: </label>
             <select id="conversor">
-                <option value="hex">Base hexadecimal</option>
+                <option selected value="hex">Base hexadecimal</option>
                 <option value="dec">Base decimal</option>
                 <option value="oct">Base octal</option>
                 <option value="bin">Base binária</option>
             </select>
             <button onclick="converterBases()">Converter</button>
         </div>
-        <p>Resultado da conversão: <strong id="resultado">100</strong></p>
+        <p>Resultado da conversão: <strong id="resultado">F</strong></p>
     </main>
 </body>
 </html>
