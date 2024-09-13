@@ -11,10 +11,14 @@ body{
     background-image: linear-gradient(to bottom, rgb(18, 109, 184), rgb(152, 223, 247));
     background-repeat: no-repeat;
     background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main{
-    min-width: 320px;
+    width: 80%;
     max-width: 500px;
     margin: 20px auto;
     padding: 10px;
@@ -36,27 +40,25 @@ div{
 }
 
 input{
+    width: 50px;
     padding: 4px;
     border-radius: 5px;
     border: 1px solid rgba(128, 128, 128, 0.486);
 }
 
 select{
+    width: 141px;
     padding: 4px;
     border-radius: 5px;
     border: 1px solid rgba(128, 128, 128, 0.486);
 }
-
-input[type="text"]{
-    width: 50px;
-}
-
 button{
     background-color: rgb(93, 182, 255);
     border: none;
     border-radius: 5px;
+    width: 100px;
     padding: 8px;
-    margin: 0 20px;
+    margin: 10px 20px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.315);
     cursor: pointer;
 
@@ -80,4 +82,15 @@ p{
 strong{
     border: 1px dashed black;
     padding: 5px;
+}
+@media (min-width: 600px) {
+    input{
+        width: auto;
+        max-width: 100px;
+    }
+}
+@media (min-width: 900px) {
+    input{
+        max-width: 150px;
+    }
 }
