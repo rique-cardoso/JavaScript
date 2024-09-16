@@ -53,3 +53,7 @@ input[type="button"]{
 input[type="button"]:hover{
     background-color: rgb(45, 81, 158);
 }
+#resultado{
+    margin-top: 20px;
+    line-height: 25px;
+}
