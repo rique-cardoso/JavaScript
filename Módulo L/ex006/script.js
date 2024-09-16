@@ -22,6 +22,12 @@ registrar.addEventListener('click', e => {
 })
 
 encerrar.addEventListener('click', e => {
+    e.preventDefault()
     const somaSalario = pessoas.reduce((prev, now) => Number(prev) + Number(now.salario), 0)
-    alert(somaSalario)
+    const somaFilhos = pessoas.reduce((prev, now) => Number(prev) + Number(now.numeroFilhos), 0)
+    const maiorSalario = Math.max(...pessoas.map(elem => Number(elem.salario)))
+    const menor150 = pessoas.filter(e => Number(e.salario) < 150)
+    for (const elemento of menor150) {
+        console.log(elemento.salario)
+    }
 })
