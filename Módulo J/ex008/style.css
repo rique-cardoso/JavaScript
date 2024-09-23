@@ -19,7 +19,17 @@
     padding: 5px;
     border-radius: 5px;
     display: flex;
+    flex-direction: column;
     width: 200px;
+}
+.carro button{
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.158);
+}
+.carro button:hover{
+    background-color: #888;
+    transition: 1s;
 }
 .campoForm{
     display: flex;

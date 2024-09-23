@@ -7,6 +7,9 @@ const adicionarCarro = document.querySelector('#btn_addCarro')
 const nome = document.querySelector('#f_nome')
 const portas = document.querySelector('#f_portas')
 let veiculos = []
+const removerCarros = carroRemovido => {
+    veiculos = veiculos.filter(e => e.nome != carroRemovido)
+}
 tipoMilitar.addEventListener('click', e => {
     nome.value = ""
     portas.value = 0
@@ -27,10 +30,20 @@ const gerenciarExibicaco = () =>{
     carros.innerHTML = ""
     veiculos.map(e => {
         const div_carro = document.createElement("div")
+        const btn_remover = document.createElement("button")
+        btn_remover.addEventListener('click', e => {
+            const carroRemovido = e.target.parentNode.dataset.nome
+            removerCarros(carroRemovido)
+            gerenciarExibicaco()
+        })
         div_carro.setAttribute("class", "carro")
+        div_carro.setAttribute("data-nome", e.nome)
         div_carro.innerHTML = `Nome: ${e.nome}<br>`
+        div_carro.innerHTML += `Tipo: ${e.tipo}<br>`
         div_carro.innerHTML += `Quantidade de portas: ${e.portas}`
+        btn_remover.innerHTML = "Remover"
         carros.appendChild(div_carro)
+        div_carro.appendChild(btn_remover)
     })
 }
 adicionarCarro.addEventListener('click', e => {
@@ -50,6 +63,7 @@ class Carro{//Classe Pai
         this.ligado = false
         this.velocidade = 0
         this.cor = undefined
+        this.tipo = "Normal"
     }
     ligar = function(){
         this.ligado = true
@@ -67,6 +81,7 @@ class CarroMilitar extends Carro{//Classe Filha
         this.blindagem = blindagem
         this.municao = municao
         this.setCor("verde")
+        this.tipo = "Militar"
     }
     atirar = function(){
         if(this.municao > 0){
