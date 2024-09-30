@@ -8,35 +8,38 @@
 </head>
 <body>
     <div id="calc" class="calc">
-        <div id="div-nome" class="div-nome">
+        <div id="calc_principal">
+            <div id="div-display" class="div-display">
+                <p id="display">0</p>
+            </div>
+            <div id="div-teclas" class="div-teclas">
+                <button id="t(" class="tecla num">(</button>
+                <button id="t)" class="tecla num">)</button>
+                <button id="tcpy" class="tecla teclaOp">Cpy</button>
+                <button id="tlimpar" class="tecla teclaOp">Cl.</button>
+                <button id="t7" class="tecla num">7</button>
+                <button id="t8" class="tecla num">8</button>
+                <button id="t9" class="tecla num">9</button>
+                <button id="tsoma" class="tecla teclaOp op">+</button>
+                <button id="t4" class="tecla num">4</button>
+                <button id="t5" class="tecla num">5</button>
+                <button id="t6" class="tecla num">6</button>
+                <button id="tsubtracao" class="tecla teclaOp op">-</button>
+                <button id="t1" class="tecla num">1</button>
+                <button id="t2" class="tecla num">2</button>
+                <button id="t3" class="tecla num">3</button>
+                <button id="tmultiplicacao" class="tecla teclaOp op">x</button>
+                <button id="t0" class="tecla num">0</button>
+                <button id="tseparador" class="tecla num">,</button>
+                <button id="tigual" class="tecla teclaOp res">=</button>
+                <button id="tigual" class="tecla teclaOp op">÷</button>
+            </div>
         </div>
-        <div id="div-display" class="div-display">
-            <p id="display">0</p>
-        </div>
-        <div id="div-teclas" class="div-teclas">
-            <button id="t(" class="tecla num">(</button>
-            <button id="t)" class="tecla num">)</button>
-            <button id="tcpy" class="tecla teclaOp">Cpy</button>
-            <button id="tlimpar" class="tecla teclaOp">Cl.</button>
-            <button id="t7" class="tecla num">7</button>
-            <button id="t8" class="tecla num">8</button>
-            <button id="t9" class="tecla num">9</button>
-            <button id="tsoma" class="tecla teclaOp op">+</button>
-            <button id="t4" class="tecla num">4</button>
-            <button id="t5" class="tecla num">5</button>
-            <button id="t6" class="tecla num">6</button>
-            <button id="tsubtracao" class="tecla teclaOp op">-</button>
-            <button id="t1" class="tecla num">1</button>
-            <button id="t2" class="tecla num">2</button>
-            <button id="t3" class="tecla num">3</button>
-            <button id="tmultiplicacao" class="tecla teclaOp op">x</button>
-            <button id="t0" class="tecla num">0</button>
-            <button id="tseparador" class="tecla num">,</button>
-            <button id="tigual" class="tecla teclaOp res">=</button>
-            <button id="tigual" class="tecla teclaOp op">÷</button>
+        <div id="calc_aba">
+            >
         </div>
     </div>
     <!-- <input type="text" id="teste" style="border: 1px dotted red;"> -->
-    <script src="clipboard.js"></script>
+    <script src="abaEmGaveta.js"></script>
 </body>
 </html>
