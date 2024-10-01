@@ -25,5 +25,6 @@ const data = new Date()
 //Formatações da data
 const dia = data.getDate() < 10 ? `0${data.getDate()}` : data.getDate()
 const mes = data.getMonth() < 10 ? `0${data.getMonth()}` : data.getMonth()
+//Em JS o mês é como se fosse um array, cujo o índice sempre inicia-se em 0, ou seja, janeiro é o mês zero, fevereiro o mês 1, março mês 2 e assim por diante.
 const data_resumida = dia + "/" + mes + "/" + data.getFullYear()
 console.log(data_resumida)
