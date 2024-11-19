@@ -1,9 +1,9 @@
 //Pegando os objetos do DOM
 const palco = document.querySelector('#palco')
 const num_objetos = document.querySelector('#num_objetos')
-const txt_qtde = document.querySelector('txt_qtde')
-const btn_add = document.querySelector('btn_add')
-const btn_remover = document.querySelector('btn_remover')
+const txt_qtde = document.querySelector('#txt_qtde')
+const btn_add = document.querySelector('#btn_add')
+const btn_remover = document.querySelector('#btn_remover')
 
 let larguraPalco = palco.offsetWidth //pega a largura total do objeto palco
 let alturaPalco = palco.offsetHeight //pega a altura total do objeto palco
@@ -49,11 +49,29 @@ class Bola{
         const div = document.createElement('div')
         div.setAttribute('id', this.id)
         div.setAttribute('class', 'bola')
-        div.setAttribute('style', `left: ${this.posicao_x}; top: ${this.posicao_y}; width: ${this.tamanho}; height: ${this.tamanho}; background-color: rgb(${this.cor_red}, ${this.cor_green}, ${this.cor_blue})`)
+        div.setAttribute('style', `left: ${this.posicao_x}px; top: ${this.posicao_y}px; width: ${this.tamanho}px; height: ${this.tamanho}px; background-color: rgb(${this.cor_red}, ${this.cor_green}, ${this.cor_blue})`)
         this.palco.appendChild(div)
     }
+    colisaoBordas = () => {
+        if(this.posicao_x + this.tamanho >= larguraPalco){
+            this.direcao_x = -1
+        }else if(this.posicao_x <= 0){
+            this.direcao_x = 1
+        }
+        if(this.posicao_y + this.tamanho >= alturaPalco){
+            this.direcao_y = -1
+        }else if(this.posicao_y <= 0){
+            this.direcao_y = 1
+        }
+    }
     controlar = () => {
-
+        this.colisaoBordas()
+        this.posicao_x += this.direcao_x * this.velocidade_x
+        this.posicao_y += this.direcao_y * this.velocidade_y
+        this.eu.setAttribute('style', `left: ${this.posicao_x}px; top: ${this.posicao_y}px; width: ${this.tamanho}px; height: ${this.tamanho}px; background-color: rgb(${this.cor_red}, ${this.cor_green}, ${this.cor_blue})`)
+        if(this.posicao_x > larguraPalco || this.posicao_y > alturaPalco){
+            this.remover()
+        }
     }
 }
 
@@ -68,11 +86,13 @@ btn_add.addEventListener('click', e => {
     const qtde = txt_qtde.value
     for(let i = 0; i < qtde; i++){
         //Instanciar novas bolinhas
+        bolas.push(new Bola(bolas, palco))
     }
 })
 
 btn_remover.addEventListener('click', e => {
-    bolas.map(e => {
+    bolas.map(bola => {
         //Remover bolas
+        bola.remover()
     })
 })
