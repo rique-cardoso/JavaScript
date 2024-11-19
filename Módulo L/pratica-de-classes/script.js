@@ -28,15 +28,29 @@ class Bola{
         this.desenhar()
         this.controle = setInterval(this.controlar, 10)
         this.eu = document.getElementById(this.id)
+        numBolas++
+        num_objetos.innerHTML = numBolas
     }
     minhaPosicao = () => {
-
+        return this.arrayBolas.indexOf(this)
     }
     remover = () => {
-
+        clearInterval(this.controle)
+        bolas = bolas.filter(bola => {
+            if(bola.id!=this.id){
+                return bola
+            }
+        })
+        this.eu.remove()
+        numBolas--
+        num_objetos.innerHTML = numBolas
     }
     desenhar = () => {
-
+        const div = document.createElement('div')
+        div.setAttribute('id', this.id)
+        div.setAttribute('class', 'bola')
+        div.setAttribute('style', `left: ${this.posicao_x}; top: ${this.posicao_y}; width: ${this.tamanho}; height: ${this.tamanho}; background-color: rgb(${this.cor_red}, ${this.cor_green}, ${this.cor_blue})`)
+        this.palco.appendChild(div)
     }
     controlar = () => {
 
