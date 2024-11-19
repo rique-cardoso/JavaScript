@@ -11,13 +11,35 @@ let bolas = []
 let numBolas = 0
 
 class Bola{
-    constructor(){
-        this.tamanho = Math.floor(Math.random() * 15) + 10
-        this.cor_red = Math.floor(Math.random() * 255)
-        this.cor_green = Math.floor(Math.random() * 255)
-        this.cor_blue = Math.floor(Math.random() * 255)
+    constructor(arrayBolas, palco){
+        this.tamanho = Math.floor(Math.random() * 15) + 10 //calculado para que seja aleatório entre 10 e 25
+        this.cor_red = Math.floor(Math.random() * 255) //num aleatório para o rede (R,g,b)
+        this.cor_green = Math.floor(Math.random() * 255) //num aleatório para o green (r,G,b)
+        this.cor_blue = Math.floor(Math.random() * 255) //num aleatório para o blue (r,g,B)
         this.posicao_x = Math.floor(Math.random() * (larguraPalco - this.tamanho))
-        this.posicao_y = Math.floor(Math.random() * alturaPalco)
+        this.posicao_y = Math.floor(Math.random() * alturaPalco - this.tamanho)
+        this.velocidade_x = Math.floor(Math.random() * 2) + 0.5 //calculado para que seja aleatório entre 0.5 e 2.5
+        this.velocidade_y = Math.floor(Math.random() * 2) + 0.5
+        this.direcao_x = (Math.random() * 10) > 5 ? 1 : -1
+        this.direcao_y = (Math.random() * 10) > 5 ? 1 : -1
+        this.palco = palco
+        this.arrayBolas = arrayBolas
+        this.id = Date.now() + "_" + Math.floor(Math.random() * 100000000000)
+        this.desenhar()
+        this.controle = setInterval(this.controlar, 10)
+        this.eu = document.getElementById(this.id)
+    }
+    minhaPosicao = () => {
+
+    }
+    remover = () => {
+
+    }
+    desenhar = () => {
+
+    }
+    controlar = () => {
+
     }
 }
 
