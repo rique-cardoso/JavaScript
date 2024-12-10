@@ -1,0 +1,26 @@
+@charset "UTF-8";
+*{
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.objetos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px;
+    border: 3px solig #888;
+    background-color: #eee;
+}
+.computador{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
+}
