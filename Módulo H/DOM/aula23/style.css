@@ -1,0 +1,24 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+header{
+    background-color: gray;
+    text-align: right;
+    width: 80vw;
+    height: 100vh;
+    position: absolute;
+    right: -100vw;
+    transition: all ease-in .5s;
+}
+header.active{
+    right: 0;
+}
+header > button{
+    position: fixed;
+    right: 0;
+    cursor: pointer;
+}
