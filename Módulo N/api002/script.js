@@ -3,7 +3,8 @@ const btnSorteio = document.querySelector('#sorteio')
 const divImg = document.querySelector('#img')
 btnSorteio.addEventListener('click', e => {
 
-    const id = Math.round(Math.random() * 20)
+    // const id = Math.round(Math.random() * 20)
+    const id = Math.floor(Math.random() * 826) + 1
     const img = document.createElement('img')
 
     // Remove imagem se houver:
