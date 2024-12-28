@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de estoque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <p>Quantidade atual: <input type="number" id="qtdAtual"></p>
+        <p>Quantidade mínima: <input type="number" id="qtdMinima">  Quantidade máxima: <input type="number" id="qtdMaxima" onblur="verificaEstoque()"></p>
+        <p id="resposta"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
