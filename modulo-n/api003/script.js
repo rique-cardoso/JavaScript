@@ -1,7 +1,7 @@
-const btnSorteio = document.querySelector('#sorteio')
+const btnImagem = document.querySelector('#ver_imagem')
 const divImg = document.querySelector('#img')
 
-btnSorteio.addEventListener('click', () => {
+btnImagem.addEventListener('click', () => {
     divImg.innerHTML = '<p>Carregando...</p>' // Indicador de carregamento
 
     // Faz a requisição para o backend Python
