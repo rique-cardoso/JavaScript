@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Rick and Morty</title>
+</head>
+<body>
+    <h1>Buscar Personagem</h1>
+    <form id="characterForm">
+        <label for="name">Nome do Personagem:</label>
+        <input type="text" name="name" id="name" placeholder="Digite o nome"><br><br>
+        <label for="id">ID do Personagem (1-826):</label>
+        <input type="number" name="id" id="id" placeholder="Digite o ID" min="1" max="826"><br><br>
+        <button type="button" id="searchBtn">Consultar</button>
+    </form>
+    <h2>Resultado</h2>
+    <div id="result"></div>
+    <script src="script.js"></script>
+</body>
+</html>
