@@ -1,3 +1,4 @@
 venv/
 node_modules/
 modulo-n/api004/yarn.lock
+.env
