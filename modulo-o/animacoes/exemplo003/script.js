@@ -4,28 +4,12 @@ const btn_esquerda = document.querySelector('#btn_esquerda')
 const btn_direita = document.querySelector('#btn_direita')
 
 const init = () => {
-    carro.style = "position:relative;left:0px;width:100px"
-    tamMax = window.innerWidth - parseInt(carro.style.width)
+    carro.style = "position:relative;left:0px"
 }
-
 let anima = null
-let tamMax = null
 const mover = (dir) => {
-    if(dir > 0){
-        if(parseInt(carro.style.left) <= tamMax){
-            carro.style.left = parseInt(carro.style.left) + (10*dir) + "px"
-            anima = setTimeout(mover, 20, dir)
-        }else{
-            clearTimeout(anima)
-        }
-    }else if(dir < 0){
-        if(parseInt(carro.style.left) >= 0){
-            carro.style.left = parseInt(carro.style.left) + (10*dir) + "px"
-            anima = setTimeout(mover, 20, dir)
-        }else{
-            clearTimeout(anima)
-        }
-    }
+    carro.style.left = parseInt(carro.style.left) + (10*dir) + "px"
+    anima = setTimeout(mover, 20, dir)
 }
 btn_parar.addEventListener('click', e => {
     clearTimeout(anima)
@@ -39,6 +23,3 @@ btn_direita.addEventListener('click', e => {
     mover(1)
 })
 window.addEventListener("load", init())
-window.addEventListener("resize", () => {
-    window.innerWidth - parseInt(carro.style.width) 
-})
